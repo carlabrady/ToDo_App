@@ -5,6 +5,7 @@
   "main": "server.js",
   "dependencies": {
     "body-parser": "^1.18.1",
+    "bootstrap": "^4.0.0-beta",
     "express": "^4.15.4",
     "pg": "^7.3.0"
   },
