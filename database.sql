@@ -1,4 +1,4 @@
-// database name = carlabrady;
+--database name = carlabrady;
 
 CREATE TABLE tasks (
 	id SERIAL PRIMARY KEY,

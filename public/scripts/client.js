@@ -2,7 +2,27 @@ console.log('JS');
 
 function onReady() {
     console.log('page load');
+    $('#add').on('click', addTask);
     getList();
+}
+
+function addTask() {
+    var addTask = $('#toDoItem').val();
+    console.log('toDoItem', addTask);   
+
+    var objectToSend = {
+        task: addTask
+    };
+
+    $.ajax({
+        type: 'POST',
+        url: '/tasks',
+        data: objectToSend,
+        success: function(response) {
+            console.log(response);
+            getList();
+        }
+    });
 }
 
 function getList() {
