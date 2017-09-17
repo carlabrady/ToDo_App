@@ -67,22 +67,21 @@ function appendList(taskList) {
     $('#taskDisplay').empty();
     for (var i = 0; i < taskList.length; i++) {
         var taskToAppend = taskList[i];
-        var $tr = $('<tr></tr>');
         var $tdForButton = $('<td></td>');
         var $button;
         var $deleteButton = $('<button class=delete>Delete</button>');
 
         if(taskToAppend.is_complete === false) {
             $button = $('<button class="markComplete">Complete</button>');
+            $tr = $('<tr class=stillWorking></tr>')
         } else {
             $button = $('<button class="strike">Complete</button>');
+            $tr = $('<tr class=finished></tr>')
         }
 
         $tr.append('<td>' + taskToAppend.task + '</td>');        
-        $button.data('id', taskToAppend.id);
-        $deleteButton.data('id', taskToAppend.id);        
-        $tdForButton.append($button);
-        $tdForButton.append($deleteButton);        
+        $tdForButton.append($button.data('id', taskToAppend.id));
+        $tdForButton.append($deleteButton.data('id', taskToAppend.id));        
         $tr.append($tdForButton);
         $('#taskDisplay').append($tr);
     }

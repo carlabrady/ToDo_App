@@ -1,8 +1,22 @@
 .container {
-    align-items: center;
+    text-align: center;
+    background-color: rgba(240, 252, 252, 0.4);
+}
+
+.row {
+    width: 
 }
 
 .strike {
     text-decoration: line-through;
     background-color: grey;
+}
+
+.stillWorking {
+    background-color: rgba(247, 224, 224, 0.5);
+    
+}
+
+.finished {
+    background-color: rgba(224, 247, 240, 0.5);    
 }
